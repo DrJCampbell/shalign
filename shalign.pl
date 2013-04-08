@@ -3,6 +3,7 @@ use Parallel::ForkManager;
 use Getopt::Long;
 use warnings;
 use strict;
+
 # This is the script referred to in Sims et al. 2011
 # High-throughput RNA interference screening using pooled shRNA libraries and next generation sequencing
 # (Genome Biology 2011, 12:R104 doi:10.1186/gb-2011-12-10-r104) 
@@ -38,7 +39,7 @@ sub printShrnaNgsNdist($$$$); # expId, ndistData, outputfile
 
 my $expId = 0;				# Project ID (only used in output bin file)
 my $binThres = 0;			# Threshold for bins (if any)
-my $offset = 0;			# Left sequence boundary (if any)
+my $offset = 0;				# Left sequence boundary (if any)
 my $length = 19;			# Right sequence boundary (if any)
 my @fastqFiles = ();			# filenames of input files 
 my @shrnaLibFiles = ();			# Name of files containing shrna libraries
@@ -54,7 +55,7 @@ my $hammingDistance;
 my $damerauLevenshteinDistance;
 my $joinReports;
 my $outputDirectory;
-my $ccodeFile = "./distance";	# Location of the file containing C distance calculation (Hamming and Damerau-Levenshtein
+my $ccodeFile = "./distance";		# Location of the file containing C distance calculation (Hamming and Damerau-Levenshtein)
 
 ######
 my %dbloadStats = (); 	# {lane} ->[sr_total, bin_total, TACA_total, oneN, twoN, sr_perfect_mapped_total,
